@@ -1,5 +1,8 @@
 import scrapy
 from scrapy.crawler import CrawlerProcess
+import json
+from datetime import datetime
+import os
 from bs4 import BeautifulSoup
 import requests
 
@@ -18,11 +21,10 @@ class OtodomBot(scrapy.Spider):
         for url in urls:
             yield scrapy.Request(url=url, callback=self.parse_one_page)
 
-    def parse_one_page(self, response):
-        price = response.css("#root > div > article > div:nth-child(1) > header > div.css-15n3v4t-AdHeader-className "
-                             "> div.css-7ryazv-AdHeader-className::text").extract_first()
-        details = response.css("#root > div > article > div.css-1uapnya-AdPage-className > "
-                               "div.css-pvzbw2-AdPage-className > section.section-overview > div > ul > li").extract()
+    @staticmethod
+    def parse_one_page(response):
+        price = response.css("#root > div > article > header > div:nth-child(3) > div::text").extract_first()
+        details = response.css("#root > div > article > div > div > section.section-overview > div > ul > li").extract()
         if price is not None:
             record = {"price": price,
                       "details": details,
@@ -31,13 +33,20 @@ class OtodomBot(scrapy.Spider):
             detailsy.append(details)
 
 
+
 real_estates = []
 detailsy = []
 # otodom_katowice = "https://www.otodom.pl/sprzedaz/mieszkanie/katowice/?nrAdsPerPage=72&page=1"
 # soup = BeautifulSoup(requests.get(otodom_katowice).text, 'html.parser')
 # pages_all = int(soup.select("#pagerForm > ul > li.pager-counter > strong")[0].text)
-pages_all = 2  # for test purposes
+pages_all = 1  # for test purposes
 process = CrawlerProcess()
 process.crawl(OtodomBot)
 process.start()
 
+filename = f"dump_{datetime.now().strftime('%Y%m%d')}.json"
+
+with open(filename, 'w') as outfile:
+    json.dump(real_estates, outfile)
+
+print("Task finished")
