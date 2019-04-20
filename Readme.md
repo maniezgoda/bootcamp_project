@@ -10,7 +10,7 @@ Pierwszym etapem projektu było przygotowanie scrappera, który pobrał z serwis
 
 Przetworzoną csv wraz zrzutem danych na dzień **2019-04-20** przerzucono do folderu ```model```, w którym przystąpiono do procesu budowy modelu w edytorze jupyter notebook
 
-##Uwaga!
+## Uwaga!
 **Serwis otodom.pl zmienia często układ strony w celu ochrony przed scrappingiem w związku z czym selectory css mogą być nieaktualne.**
 
 W związku z powyższym do modelowania wykorzystano zrzut danych z dnia **2019-04-20** w którym obecne selektory działały.
