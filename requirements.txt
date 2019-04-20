@@ -7,4 +7,3 @@ jupyter notebook
 scikit-learn
 matplotlib
 seaborn
-xgboost
