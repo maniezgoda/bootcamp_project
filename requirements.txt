@@ -3,3 +3,8 @@ pypiwin32
 beautifulsoup4
 requests
 pandas
+jupyter notebook
+scikit-learn
+matplotlib
+seaborn
+xgboost
