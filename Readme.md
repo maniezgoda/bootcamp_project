@@ -1,4 +1,4 @@
-# Kodołamacz Bootcamp project
+# Kodołamacz Bootcamp projekt zaliczeniowy
 by Maciej Niezgoda (GR. I Katowice)
 
 ---
@@ -42,3 +42,10 @@ Nie wszystkie kolumny są wypełnione dane, gdyż część ofert nie jest w peł
 * ```standard``` - informacja o standardzie wykończenia lokalu
 * ```url``` - źródłowy url z ofertą
 
+### Struktura projektu:
+
+* ```data_scraper``` - Część odpowiedzialna za pobranie i przetworzenie danych
+  * ```data_scraper``` - Skrypt oparty o ```scrapy```, który pobiera dane z otodom i zapisuje je w formie pliku JSON
+  * ```data_processing``` - Skrypt który pobiera dane wygenerowane z ```data_scraper``` parsuje html z cechami nieruchomości i tworzy wystandaryzowany csv.
+* ```model``` - Budowa modelu
+  * ```Model.ipynb``` - Jupyter notebook zawierający eksplorację danych, analizę oraz modelowanie i podsumowanie projektu. Najważniejszy plik i sugeruję, by po zapoznaniu się z readme udać się do niego.
