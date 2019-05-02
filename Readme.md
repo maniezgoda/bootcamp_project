@@ -4,9 +4,9 @@ by Maciej Niezgoda (GR. I Katowice)
 ---
 
 ## Opis celu projektu:
-Celem projektu jest budowa modelu predykcji wartości cen nieruchomości w Katowicach na podstawie danych pochodzących z serwisu ```otodom.pl```.
+Celem projektu jest budowa modelu predykcji wartości cen lokali mieszkalnych w Katowicach na podstawie danych pochodzących z serwisu ```otodom.pl```.
 
-Pierwszym etapem projektu było przygotowanie scrappera, który pobrał z serwisu ```otodom.pl``` informacje o nieruchomościach i przetworzył je w czytelny dataframe. Scrapper znajduje się w module ```data_scraper```.
+Pierwszym etapem projektu było przygotowanie scrappera, który pobrał z serwisu ```otodom.pl``` następnie przygotowano skrypt, który przyjmował pobrane informacje o nieruchomościach i przetworzył je w czytelny dataframe. 
 
 Przetworzoną csv wraz zrzutem danych na dzień **2019-04-20** przerzucono do folderu ```model```, w którym przystąpiono do procesu budowy modelu w edytorze jupyter notebook
 
@@ -48,4 +48,4 @@ Nie wszystkie kolumny są wypełnione dane, gdyż część ofert nie jest w peł
   * ```data_scraper``` - Skrypt oparty o ```scrapy```, który pobiera dane z otodom i zapisuje je w formie pliku JSON
   * ```data_processing``` - Skrypt który pobiera dane wygenerowane z ```data_scraper``` parsuje html z cechami nieruchomości i tworzy wystandaryzowany csv.
 * ```model``` - Budowa modelu
-  * ```Model.ipynb``` - Jupyter notebook zawierający eksplorację danych, analizę oraz modelowanie i podsumowanie projektu. Najważniejszy plik i sugeruję, by po zapoznaniu się z readme udać się do niego.
+  * **```Model.ipynb```** - Jupyter notebook zawierający eksplorację danych, analizę oraz modelowanie i podsumowanie projektu. Najważniejszy plik i sugeruję, by po zapoznaniu się z readme udać się do niego.
